@@ -2,6 +2,11 @@
 
 namespace App\Console;
 
+use App\Console\Commands\Chart;
+use App\Console\Commands\CreateTask;
+use App\Console\Commands\Gb;
+use App\Console\Commands\push;
+use App\Facades\TaskRepository;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +18,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        CreateTask::class,
+        push::class,
     ];
 
     /**
@@ -24,8 +30,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('sendMail:mail')->everyFiveMinutes();
+        $schedule->command('clearTaskCache:task')->everyMinute();
+
+//        $schedule->call(function (){
+//
+//        })->everyFiveMinutes();
     }
 
     /**

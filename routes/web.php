@@ -1,25 +1,29 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
+/* 系统登录 */
+Route::group([
+    'namespace' => 'Auth'
+],function(){
+    require_once __DIR__ . '/authRoutes/auth.php';
+});
+/* 后台管理模块 */
+Route::group([
+    'prefix'     => 'admin',
+    'namespace'  => 'Admin',
+    'middleware' => ['auth'],
+],function(){
+    require_once __DIR__ . '/adminRoutes/admin.php';
 });
 
-Route::get('/index','admin\IndexController@index');
+//接收广播页面
+Route::get('admin/job/guangbo',[
+    'as' => 'admin.job.guangbo',
+    'uses' => 'Admin\JobController@guangbo'
+]);
+
+//vue测试
+Route::get('admin/job/vue',[
+    'as' => 'admin.job.vue',
+    'uses' => 'Admin\JobController@vue'
+]);
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -10,17 +10,6 @@
 | used to check if an authenticated user can listen to the channel.
 |
 */
-
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    if($user->id == 1){
-        return $user;
-    }else{
-        return false;
-    }
+Broadcast::channel('order.1', function ($user, $orderId) {
+    return $user->id === Order::findOrNew($orderId)->user_id;
 });
-
-
-Broadcast::channel('testRoom', function ($user) {
-    return $user;
-});
-

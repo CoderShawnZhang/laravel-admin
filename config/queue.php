@@ -17,6 +17,7 @@ return [
 
     'default' => env('QUEUE_DRIVER', 'sync'),
 
+    'emails' => 'redis',
     /*
     |--------------------------------------------------------------------------
     | Queue Connections

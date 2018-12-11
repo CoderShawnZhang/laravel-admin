@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('TIMEZONE','UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,6 +123,8 @@ return [
 
     'log' => env('APP_LOG', 'single'),
 
+    'log_max_files' => 30,
+
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
     /*
@@ -163,8 +165,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-        /*
+        /*EventServiceProvider
          * Package Service Providers...
          */
 
@@ -177,6 +178,30 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         *  自定义服务提供者
+         */
+        \App\Providers\RepositoryServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
+        /**
+         * log-viewer库
+         */
+        \Arcanedev\LogViewer\LogViewerServiceProvider::class,
+
+        /**
+         * RBAC权限管理
+         */
+        Zizaco\Entrust\EntrustServiceProvider::class,
+
+        /**
+         * laravel-debugbar
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        /**
+         * laravel-ide-helper
+         */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
     ],
 
     /*
@@ -226,6 +251,22 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /**
+         * 自定义门面别名
+         */
+        'MenuRepository' => \App\Facades\MenuRepository::class,
+
+        /**
+         * RBAC权限管理
+         */
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
+
+        /**
+         * laravel-debugbar
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+        'Pusher' =>\Pusher\Pusher::class
     ],
 
 ];

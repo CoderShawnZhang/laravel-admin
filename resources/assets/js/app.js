@@ -19,17 +19,20 @@ Vue.use(iView);
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('ivuew-component', require('./components/iview.vue'));
+
 var app = new Vue({
     el: '#app',
     mounted() {
         window.Echo.channel('channel-name').listen('PushMessageEvent', (e) => {
             // this.messages.push(e.message);
+            this.$Message.config({top:70,duration:3});
+            this.$Notice.config({top:50,duration:3});
+            this.$Message.info('This is a info tip');
             this.$Notice.error({
                 title: '用户退出提醒',
                 desc: e.message
             });
-            console.log(e.message);
         });
-        console.log('Component mounted1.');
     }
 });

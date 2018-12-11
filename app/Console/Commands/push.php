@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Console\Commands;
-
 use App\Events\PushMessageEvent;
 use Illuminate\Console\Command;
-
 class push extends Command
 {
     /**
@@ -13,14 +10,12 @@ class push extends Command
      * @var string
      */
     protected $signature = 'push:message';
-
     /**
      * The console command description.
      *
      * @var string
      */
     protected $description = '测试推送消息';
-
     /**
      * Create a new command instance.
      *
@@ -30,7 +25,6 @@ class push extends Command
     {
         parent::__construct();
     }
-
     /**
      * Execute the console command.
      *
