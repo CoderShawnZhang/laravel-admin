@@ -26,3 +26,8 @@ Route::get('system/env',[
    'as' => 'admin.system.env',
    'uses' => 'SystemController@env'
 ]);
+
+Route::get('system/send',[
+    'as' => 'admin.system.send',
+    'uses' => 'SystemController@send'
+]);

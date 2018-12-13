@@ -36,7 +36,7 @@
                 <a href="{{route('logout')}}"  class="btn btn-default btn-flat" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     退出
                 </a>
-                <form id="logout-form" action="http://laravel55.local.alwooo.com/logout" method="POST" style="display: none;">
+                <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                     {{csrf_field()}}
                 </form>
             </div>

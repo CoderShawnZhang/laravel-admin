@@ -9,6 +9,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="shortcut icon" type="image/x-icon" href="{{ elixir('favicon.ico') }}" media="screen" />
     <link rel="stylesheet" href="{{ mix('assets/admin/css/app.min.css') }}">
+    {{--<link rel="stylesheet" href="{{ elixir('assets/admin/css/app.min.css') }}">--}}
     <link rel="stylesheet" href="{{elixir('assets/admin/plugins/iCheck/flat/'.$checkBoxSkin.'.css')}}">
     @yield('style')
 </head>
@@ -39,7 +40,7 @@
 </div>
 <!-- javascript -->
 <script src="{{ asset('js/echo.js') }}"></script>
-<script src="{{ elixir('assets/admin/js/app.min.js') }}"></script>
+<script src="{{ mix('assets/admin/js/app.min.js') }}"></script>
 <script src="{{ elixir('assets/admin/plugins/iCheck/icheck.min.js') }}"></script>
 <script>
     $(function () {

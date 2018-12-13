@@ -53,7 +53,6 @@ mix.copy("node_modules/sweetalert/dist/sweetalert.min.js", "resources/assets/adm
 
 // 文本编辑器
 mix.copy('node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.css', 'resources/assets/admin/css');
-//mix.copy('node_modules/bootstrap3-wysihtml5-bower/dist/bootstrap3-wysihtml5.all.js', 'resources/assets/admin/js/bootstrap3-wysihtml5.all.js');
 
 //合并上传头像样式文件
 mix.styles(['resources/assets/admin/upload/css/cropper.min.css','resources/assets/admin/upload/css/sitelogo.css'],'public/assets/admin/css/uploadImage/uploadImage.min.css');

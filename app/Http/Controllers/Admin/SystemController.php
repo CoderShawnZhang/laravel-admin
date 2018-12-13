@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\PublicChartRoomEvent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -40,5 +41,14 @@ class SystemController extends Controller
         ];
         $x = modifyEnv($data);
         return view('admin.system.env',compact('envList'));
+    }
+
+    public function send(Request $request)
+    {
+        if($request->ajax()){
+            $message = $request->input('message');
+            event(new PublicChartRoomEvent($message));
+        }
+        echo json_encode(['success' => true, 'html' => $message]);
     }
 }

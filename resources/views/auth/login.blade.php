@@ -6,7 +6,7 @@
     <title>AdminLTE 2 | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="{{ elixir('assets/admin/css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('assets/admin/css/app.min.css') }}">
 </head>
 <!--背景图片-->
 <body class="hold-transition login-page"  id="web_bg" style="background-image: url('{{config('admin.system.login_background_img')}}');">
