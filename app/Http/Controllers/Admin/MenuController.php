@@ -67,7 +67,7 @@ class MenuController extends Controller
     {
         $name = $request->input('name');
         $list =  MenuRepository::likeName('name','like',$name);
-        return view('admin.menu.index',compact('list'));
+        return view('admin.menu.list',compact('list'));
     }
 
     public function clearCache(){

@@ -32,11 +32,9 @@ class ProcessPodcast implements ShouldQueue//生成的类都实现了 Illuminate
      */
     public function handle()
     {
-        /**
         Mail::send('emails.test', ['testVar'=>$this->use['name']], function ($message){
             $message->subject('队列发送邮件'.time())
                 ->to('412906819@qq.com');
         });
-         */
     }
 }

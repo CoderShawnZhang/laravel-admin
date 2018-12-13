@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="shortcut icon" type="image/x-icon" href="{{ elixir('favicon.ico') }}" media="screen" />
-    <link rel="stylesheet" href="{{ elixir('assets/admin/css/app.min.css') }}">
+    <link rel="stylesheet" href="{{ mix('assets/admin/css/app.min.css') }}">
     <link rel="stylesheet" href="{{elixir('assets/admin/plugins/iCheck/flat/'.$checkBoxSkin.'.css')}}">
     @yield('style')
 </head>
@@ -26,7 +26,7 @@
             @include('admin.layouts.breadcrumbs')
         </section>
         <!-- Main content -->
-        <section class="content">
+        <section class="content" style="overflow-y: auto;height: 700px;">
             @include('admin.components.alert.alertMessage')
             @yield('content')
         </section>
@@ -38,6 +38,7 @@
     @include('admin.layouts.control')
 </div>
 <!-- javascript -->
+<script src="{{ asset('js/echo.js') }}"></script>
 <script src="{{ elixir('assets/admin/js/app.min.js') }}"></script>
 <script src="{{ elixir('assets/admin/plugins/iCheck/icheck.min.js') }}"></script>
 <script>
@@ -51,6 +52,11 @@
             $('#error-message').delay(1000).fadeOut();
         });
         @endif
+    });
+    window.Echo.channel('channel-name').listen('PushMessageEvent', (e) => {
+        console.log(3333);
+        var i = Number($('.label-success').html())+1;
+        $('.label-success').html(i);
     });
 </script>
 @yield('script')

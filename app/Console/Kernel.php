@@ -6,6 +6,7 @@ use App\Console\Commands\Chart;
 use App\Console\Commands\CreateTask;
 use App\Console\Commands\Gb;
 use App\Console\Commands\push;
+use App\Console\Commands\SendMailTask;
 use App\Facades\TaskRepository;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         CreateTask::class,
+        SendMailTask::class,
         push::class,
     ];
 
@@ -30,8 +32,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('sendMail:mail')->everyFiveMinutes();
-        $schedule->command('clearTaskCache:task')->everyMinute();
+//        $schedule->command('sendMail:mail')->everyFiveMinutes();
+//        $schedule->command('clearTaskCache:task')->everyMinute();
+        $schedule->command('push:message')->everyMinute();
 
 //        $schedule->call(function (){
 //

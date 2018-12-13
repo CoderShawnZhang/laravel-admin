@@ -20,10 +20,7 @@ Route::get('admin/job/guangbo',[
     'uses' => 'Admin\JobController@guangbo'
 ]);
 
-//vue测试
-Route::get('admin/job/vue',[
-    'as' => 'admin.job.vue',
-    'uses' => 'Admin\JobController@vue'
-]);
-
+Route::get('/',function (){
+    return '欢迎使用！';
+});
 Auth::routes();

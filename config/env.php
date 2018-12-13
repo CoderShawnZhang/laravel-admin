@@ -1,0 +1,33 @@
+<?php
+return [
+    'env_mapping' => [
+        'APP_NAME' => ['desc' => '显示当前系统名称！','title' => '系统名称','tag' => 'has-success','disabled' => false],
+        'APP_ENV' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'APP_KEY' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'APP_DEBUG' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'APP_LOG_LEVEL' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'APP_URL' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'DB_CONNECTION' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'DB_HOST' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'DB_PORT' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'DB_DATABASE' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'DB_USERNAME' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'DB_PASSWORD' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'BROADCAST_DRIVER' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'CACHE_DRIVER' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'SESSION_DRIVER' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'SESSION_LIFETIME' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'QUEUE_DRIVER' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'REDIS_HOST' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-warning','disabled' => true],
+        'REDIS_PASSWORD' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-warning','disabled' => true],
+        'REDIS_PORT' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-warning','disabled' => true],
+        'MAIL_DRIVER' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'MAIL_HOST' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'MAIL_PORT' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'MAIL_USERNAME' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'MAIL_PASSWORD' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'MAIL_FROM' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'MAIL_NAME' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+        'MAIL_ENCRYPTION' => ['desc' => '运行环境！','title' => '运行环境','tag' => 'has-error','disabled' => true],
+    ]
+];

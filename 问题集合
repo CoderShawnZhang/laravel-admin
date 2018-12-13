@@ -1,0 +1,36 @@
+
+Error: Cannot find module 'laravel-elixir'
+    at Function.Module._resolveFilename (module.js:472:15)
+    at Function.Module._load (module.js:420:25)
+    at Module.require (module.js:500:17)
+    at require (internal/module.js:20:19)
+    at Object.<anonymous> (/Users/zhanghongbo/develop/laravel55/gulpfile.js:1:76)
+    at Module._compile (module.js:573:32)
+    at Object.Module._extensions..js (module.js:582:10)
+    at Module.load (module.js:490:32)
+    at tryModuleLoad (module.js:449:12)
+    at Function.Module._load (module.js:441:3)
+
+
+  [RuntimeException]
+  Could not delete /Users/zhanghongbo/.composer/cache/files//psr/simple-cache/15431c55a8eb159b44d4caea9f586b79673476ab.zip:
+  解决:sudo chmod -R 777 /Users/zhanghongbo/.composer/cache/files
+
+
+webpack打包问题  4.27.1
+
+操作
+webpack resources/assets/webpack/app/main.js
+worning
+The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
+解决
+大包的时候加上 webpack --mode=development或者webpack --mode=production
+例如：webpack resources/assets/webpack/app/main.js --mode=development
+
+操作
+npm run dev
+报错
+sh: cross-env: command not found
+解决：
+去掉
+cross-env

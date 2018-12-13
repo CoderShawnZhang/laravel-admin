@@ -20,12 +20,6 @@ class TaskController extends Controller
 
     public function list()
     {
-//
-//        Mail::send('emails.test', ['testVar'=>'aaaaaaa'], function ($message){
-//            $message->subject('定时发送邮件'.time())
-//                ->to('412906819@qq.com');
-//        });
-
         $taskList = TaskRepository::getTaskList();
         return view('admin.task.list',compact('taskList'));
     }

@@ -1347,6 +1347,14 @@ table td{color: gray;}
 .setTimeOut{
     color: red;
 }
+
+. has-mail{
+    color: #00c0ef;
+}
+
+.has-driver{
+    color: #941fb9;
+}
 /*
  * Skin: Blue
  * ----------
@@ -3128,5 +3136,3 @@ table td{color: gray;}
     border-left: 1px solid #d2d6de;
   }
 }
-
-/*# sourceMappingURL=app.min.css.map */

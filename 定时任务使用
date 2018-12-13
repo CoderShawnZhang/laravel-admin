@@ -1,0 +1,32 @@
+
+创建crontab文件
+sudo chmod +x /etc/crontab
+
+打开终端
+
+crontab -e  //编辑crontab任务，保存退出后自动加到crontab列表中执行
+
+crontab -l //查看所有crontab 列表
+
+修改/etc/crontab这种方法只有root用户能用，这种方法更加方便与直接直接给其他用户设置计划任务，而且还可以指定执行shell等等，
+crontab -e这种所有用户都可以使用，普通用户也只能为自己设置计划任务。然后自动写入/var/spool/cron/usename
+
+
+crontab服务的重启关闭，开启
+
+Mac系统下
+
+sudo /usr/sbin/cron start
+sudo /usr/sbin/cron restart
+sudo /usr/sbin/cron stop
+
+
+
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+HOME=/
+# run-parts
+*/1 * * * * root /bin/date >> /Users/zhanghongbo/develop/laravel-admin/time.js
+
+*/1 * * * * php /Users/zhanghongbo/develop/laravel-admin/artisan schedule:run >> /dev/null 2>&1

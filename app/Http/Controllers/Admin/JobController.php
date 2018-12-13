@@ -7,16 +7,15 @@ use App\Facades\JobRepository;
 use App\Facades\UserRepository;
 use App\Jobs\ProcessPodcast;
 use App\Http\Controllers\Controller;
-use App\Notifications\InvoicePaid;
-use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Session;
 
 class JobController extends Controller
 {
     public function list()
     {
-//        $use = UserRepository::findOne(['id' => 1]);
-//        $job = (new ProcessPodcast($use))->delay(6);
-//        $this->dispatch($job);
+        $use = UserRepository::findOne(['id' => 1]);
+        $job = (new ProcessPodcast($use))->delay(1000);
+        $this->dispatch($job);
 
         $user = UserRepository::findOne(['id'=>1]);
 

@@ -20,3 +20,9 @@ Route::get('system/word',[
     'as' => 'admin.system.word',
     'uses' => 'SystemController@word'
 ]);
+
+//.env
+Route::get('system/env',[
+   'as' => 'admin.system.env',
+   'uses' => 'SystemController@env'
+]);

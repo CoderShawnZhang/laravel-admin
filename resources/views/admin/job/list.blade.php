@@ -52,4 +52,4 @@
         }
 
     </script>
-@endsection;
+@endsection

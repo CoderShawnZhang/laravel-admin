@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Constants\NumberConstant;
+use App\Events\PushMessageEvent;
 use App\Facades\TaskRepository;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
@@ -42,13 +43,15 @@ class SendMailTask extends Command
      */
     public function handle()
     {
-        $task = TaskRepository::findOne(['tag' => $this->commandInfo()['tag']]);
-        if($task['state'] == NumberConstant::STATE_OPEN){
-            Mail::send('emails.test', ['testVar'=>'4444444'], function ($message){
-                $message->subject('1231定时发送邮件'.time())
-                    ->to('412906819@qq.com');
-            });
-        }
+        event(new PushMessageEvent(1));
+//        $task = TaskRepository::findOne(['tag' => $this->commandInfo()['tag']]);
+//        if($task['state'] == NumberConstant::STATE_OPEN){
+//            Mail::send('emails.test', ['testVar'=>'4444444'], function ($message){
+//                $message->subject('1231定时发送邮件'.time())
+//                    ->to('412906819@qq.com');
+//            });
+//            event(new PushMessageEvent(1));
+//        }
     }
 
     public function commandInfo()
