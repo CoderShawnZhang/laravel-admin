@@ -2,13 +2,11 @@
     <!-- 及时通讯 -->
     <div class="box box-warning direct-chat direct-chat-warning">
         <div class="box-header with-border">
-            <h3 class="box-title">在线通讯</h3>
+            <h3 class="box-title">在线私人频道</h3>
             <div class="box-tools pull-right">
-                <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">3</span>
-
+                <span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">{{ $onLineCount }}</span>
                 <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-widget="chat-pane-toggle" data-original-title="Contacts">
                     <i class="fa fa-comments"></i></button>
-
             </div>
         </div>
         <div class="box-body">
@@ -56,80 +54,21 @@
                 </div>
             </div>
             <!-- 通讯用户列表 -->
-            <div class="direct-chat-contacts">
+            <div class="direct-chat-contacts" style="width: 160px;right: 0px;">
                 <ul class="contacts-list">
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="{{elixir('assets/admin/images/user1-128x128.jpg')}}" alt="User Image">
-                            <div class="contacts-list-info">
+                    @foreach($onLineUser as $key => $val)
+                        <li>
+                            <a href="#">
+                                <img class="contacts-list-img" src="{{empty($val['profile']['avatar']) ? elixir('logo.png') : elixir($val['profile']['avatar'])}}" alt="User Image">
+                                <div class="contacts-list-info">
                                         <span class="contacts-list-name">
-                                          Count Dracula
-                                          <small class="contacts-list-date pull-right">2/28/2015</small>
+                                         {{$val['name']}}
                                         </span>
-                                <span class="contacts-list-msg">How have you been? I was...</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="{{elixir('assets/admin/images/user7-128x128.jpg')}}" alt="User Image">
-                            <div class="contacts-list-info">
-                                        <span class="contacts-list-name">
-                                          Sarah Doe
-                                          <small class="contacts-list-date pull-right">2/23/2015</small>
-                                        </span>
-                                <span class="contacts-list-msg">I will be waiting for...</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="{{elixir('assets/admin/images/user3-128x128.jpg')}}" alt="User Image">
-                            <div class="contacts-list-info">
-                                        <span class="contacts-list-name">
-                                              Nadia Jolie
-                                              <small class="contacts-list-date pull-right">2/20/2015</small>
-                                        </span>
-                                <span class="contacts-list-msg">I'll call you back at...</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="{{elixir('assets/admin/images/user5-128x128.jpg')}}" alt="User Image">
-                            <div class="contacts-list-info">
-                                        <span class="contacts-list-name">
-                                          Nora S. Vans
-                                          <small class="contacts-list-date pull-right">2/10/2015</small>
-                                        </span>
-                                <span class="contacts-list-msg">Where is your new...</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="{{elixir('assets/admin/images/user6-128x128.jpg')}}" alt="User Image">
-                            <div class="contacts-list-info">
-                                        <span class="contacts-list-name">
-                                          John K.
-                                          <small class="contacts-list-date pull-right">1/27/2015</small>
-                                        </span>
-                                <span class="contacts-list-msg">Can I take a look at...</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img class="contacts-list-img" src="{{elixir('assets/admin/images/user8-128x128.jpg')}}" alt="User Image">
-                            <div class="contacts-list-info">
-                                        <span class="contacts-list-name">
-                                          Kenneth M.
-                                          <small class="contacts-list-date pull-right">1/4/2015</small>
-                                        </span>
-                                <span class="contacts-list-msg">Never mind I found...</span>
-                            </div>
-                        </a>
-                    </li>
+                                    <span class="contacts-list-msg">{{empty($val['profile']['job']) ? '未设置' : $val['profile']['job']}}</span>
+                                </div>
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

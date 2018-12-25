@@ -12,16 +12,17 @@ use App\Http\Controllers\Controller;
 
 class PermissionController extends Controller
 {
-    public function list()
+    public function list(Request $request)
     {
-        //获取首个菜单id
-        $firstMenu = MenuRepository::findOne(['route' => 'admin.system.desktop']);
         //所有权限列表
-        $permissionFirstMenuId = PermissionRepository::firstMenuId(['menu_id'=>$firstMenu['id']])['menu_id'];
-        //所有菜单列表
-        $allMenuCache = MenuRepository::getAllMenu();
-        $menuList = MenuRepository::get_menu_node_tree($allMenuCache);
-        return view('admin.permission.list',compact('permissionFirstMenuId','menuList'));
+        $permissionList = PermissionRepository::listPage([],10);
+        //分页处理
+        $page = isset($page)?$request['page']:1;
+        $permissionList = $permissionList->appends(array(
+             'page'=>$page
+         ));
+
+        return view('admin.permission.list',compact('permissionList'));
     }
 
     public function ajax(Request $request)

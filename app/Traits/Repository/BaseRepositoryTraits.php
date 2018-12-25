@@ -36,6 +36,11 @@ trait BaseRepositoryTraits
         return $this->model::where($fiels,$option,'%'.$val.'%')->get();
     }
 
+    public function page($condition =[],$page = 10)
+    {
+         return $this->model::where($condition)
+         ->orderBy('id','asc')->paginate($page);
+    }
     /**
      * 删除,根据ids
      *

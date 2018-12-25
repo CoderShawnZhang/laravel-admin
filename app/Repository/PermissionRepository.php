@@ -23,6 +23,10 @@ class PermissionRepository extends BaseRepository
         return $this->findAll($condition);
     }
 
+    public function listPage($condition = [],$page = 10)
+    {
+        return $this->page($condition,$page);
+    }
     public function firstMenuId($condition = [])
     {
         $result =  $this->findOne($condition);

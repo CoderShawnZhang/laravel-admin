@@ -12,6 +12,16 @@ class RolesPresenter extends BasePresenters
     {
         $skin = config('admin.adminSkin');
         return [
+            'tableHeader' => [
+                'columns'=>[
+                    'avatar' => '头像',
+                    'role' => '角色',
+                    'created_at' => '创建时间',
+                    'state' => '状态',
+                    'option' => '操作',
+                ],
+                'style' => 'font-size:16px;',
+            ],
             'options' => [
                 'edit'=>[
                     'title' => '编辑',
@@ -22,6 +32,26 @@ class RolesPresenter extends BasePresenters
                     'title' => '删除',
                     'route' => 'admin/role/destroy',
                     'class' => 'btn btn-flat bg-'.config('adminSkin.'.$skin.'.btn_delete'),
+                ],
+                'show'=>[
+                    'title' => '查看',
+                    'route' => 'admin/role/show',
+                    'class' => 'btn btn-flat bg-'.config('adminSkin.'.$skin.'.btn_show'),
+                ]
+            ]
+        ];
+    }
+
+    public function searchControl()
+    {
+        return [
+            'action' => route('admin.user.search'),
+            'method' => 'post',
+            'inputs'=>[
+                [
+                    'name' => 'name',
+                    'type' => 'text',
+                    'placeholder' => '查询'
                 ]
             ]
         ];

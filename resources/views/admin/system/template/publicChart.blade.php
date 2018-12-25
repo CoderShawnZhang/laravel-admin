@@ -2,10 +2,10 @@
     <div class="box box-success">
         <div class="box-header ui-sortable-handle" style="cursor: move;">
             <i class="fa fa-comments-o"></i>
-            <h3 class="box-title">在线公共通讯</h3>
+            <h3 class="box-title">在线公共频道</h3>
             <div class="box-tools pull-right" data-toggle="tooltip" title="" data-original-title="Status">
                 <div class="btn-group" data-toggle="btn-toggle">
-                    在线人数：<span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">3</span>
+                    在线人数：<span data-toggle="tooltip" title="" class="badge bg-yellow" data-original-title="3 New Messages">{{ $onLineCount }}</span>
                 </div>
             </div>
         </div>
@@ -96,4 +96,4 @@
             $("#chat-box").scrollTop($("#chat-box")[0].scrollHeight);
         });
     </script>
-@endsection;
+@endsection

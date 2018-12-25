@@ -15,4 +15,9 @@ class UserRepository extends BaseRepository
     {
         return $this->model::all();
     }
+
+    public function getOnLine()
+    {
+        return $this->findAll(['state'=>1]);
+    }
 }

@@ -92,9 +92,19 @@ class UserController extends Controller
         return view('admin.user.edit',compact('user','rolesList'));
     }
 
-    public function update(UserUpdateForm $request)
+    public function update(UserUpdateForm $request,$user_id)
     {
+        try{
+            $roleId = $request->input(['role_id']);
+            $user = UserRepository::findOne(['id'=>$user_id]);
 
+            $user->roles()->attach($roleId);
+            $data = $request->except(['_token','_method','role_id']);
+            UserRepository::updateById($user_id,$data);
+            return $this->successRouteTo('admin.user.list','更新用户成功！');
+        } catch (\Exception $e) {
+            return $this->errorBackTo($e->getMessage());
+        }
     }
     /**
      * 删除用户

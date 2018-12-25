@@ -26,7 +26,6 @@ class UserUpdateForm extends FormRequest
         return [
             'name'      =>  'required',
             'email'     =>  'required',
-            'password'  =>  'required',
         ];
     }
 
@@ -35,7 +34,6 @@ class UserUpdateForm extends FormRequest
         return [
             'name.required'     =>  '用户名不能为空！',
             'email.required'    =>  '账号不能为空！',
-            'password'          =>  '密码不能为空！'
         ];
     }
 }

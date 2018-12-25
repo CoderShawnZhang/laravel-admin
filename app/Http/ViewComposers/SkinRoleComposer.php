@@ -19,8 +19,9 @@ class SkinRoleComposer
         $rolePresenters = new RolesPresenter();
         $tableCompose = $rolePresenters->getTableSetting();
         $toolsCompose = $rolePresenters->toolsButton();
+        $searchCompose = $rolePresenters->searchControl();
         $detailCompose = $rolePresenters->detail();
         $uploadImgCompose = $rolePresenters->uploadImg();
-        return $view->with(compact('tableCompose','toolsCompose','detailCompose','uploadImgCompose'));
+        return $view->with(compact('tableCompose','toolsCompose','searchCompose','detailCompose','uploadImgCompose'));
     }
 }

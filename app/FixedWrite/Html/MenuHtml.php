@@ -74,16 +74,14 @@ class MenuHtml
                 }
                 $sidebar .= '<a href="#">';
                 $sidebar .= '<i class="'.$val['icon'].'"></i>';
-                $sidebar .= '<span>'.$val['name'].'</span>';
                 $sidebar .= '<span class="pulll-right-container">';
-                $sidebar .= '<i class="fa fa-angle-left pull-right"></i>';
+                $sidebar .= $val['name'];
                 $sidebar .= '</span>';
                 $sidebar .= '</a>';
-                $sidebar .= '<ul class="treeview-menu" style="padding-left: 40px;">';
+                $sidebar .= '<ul class="treeview-menu" style="padding-left: 20px;">';
                 $sidebar .= self::makeSidebarLi($val['child'],$active);
                 $sidebar .= '</ul>';
                 $sidebar .= '</li>';
-
             } else {
                 if(in_array($val['route'],$active)){
                     $sidebar .= '<li class="active">';
@@ -96,10 +94,9 @@ class MenuHtml
                     $sidebar .= '<a href="#">';
                 }
                 $sidebar .= '<i class="'.$val['icon'].'"></i>';
-                $sidebar .= $val['name'];
+                $sidebar .= '<span>'.$val['name'].'</span>';
                 $sidebar .= '</a>';
                 $sidebar .= '</li>';
-
             }
         }
         return $sidebar;

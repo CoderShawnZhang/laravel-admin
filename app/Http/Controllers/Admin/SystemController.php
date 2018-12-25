@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Events\PublicChartRoomEvent;
+use App\Facades\UserRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,7 +25,8 @@ class SystemController extends Controller
     /*后台桌面*/
     public function desktop()
     {
-        return view('admin.system.desktop');
+        $onLineUser = UserRepository::getOnLine();
+        return view('admin.system.desktop',compact('onLineUser'));
     }
 
     public function word()

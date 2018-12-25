@@ -37,22 +37,22 @@
                        data-target="#roles-modal" style="width: 150px;"
                        class="{{$detailCompose['setRole']['class']}}">分配角色</button>
                 </div>
-                {{--<div class="form-group">--}}
-                    {{--<label>头像</label>--}}
-                    {{--<img id="upload_end_show_img_small" src="" data-value="" name="uploadImage" style="width: 60px;height: 60px;display: none;"/>--}}
-                    {{--<button type="button"--}}
-                            {{--data-toggle="modal"--}}
-                            {{--data-target="#avatar-modal" style="width: 150px;"--}}
-                            {{--class="btn btn-block btn-danger btn-flat">上传头像</button>--}}
-                {{--</div>--}}
-                {{--<div class="form-group">--}}
-                    {{--<label>个人简介</label>--}}
-                    {{--<textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>--}}
-                {{--</div>--}}
+                <div class="form-group">
+                    <label>头像</label>
+                    <img id="upload_end_show_img_small" src="" data-value="" name="uploadImage" style="width: 60px;height: 60px;display: none;"/>
+                    <button type="button"
+                            data-toggle="modal"
+                            data-target="#avatar-modal" style="width: 150px;"
+                            class="btn btn-block btn-danger btn-flat">上传头像</button>
+                </div>
+                <div class="form-group">
+                    <label>个人简介</label>
+                    <textarea class="textarea" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                </div>
                 <!-- radio -->
                 <div class="form-group">
                     <label>状态</label>
-                    <select id="selData" class="form-control select2" name="parent_id" style="width: 100%;">
+                    <select id="selData" class="form-control select2" name="state" style="width: 100%;">
                         <option selected="selected" value="1">启用</option>
                         <option value="0">禁用</option>
                         <option value="-1">锁定</option>

@@ -24,6 +24,12 @@ Route::get('user/edit/{user_id}',[
      'uses' => 'UserController@edit'
 ]);
 
+//更新用户
+Route::post('user/update/{user_id}',[
+    'as' => 'admin.user.update',
+    'uses' => 'UserController@update'
+]);
+
 //删除用户
 Route::get('user/destroy/{use_id}',[
    'as' => 'admin.user.destroy',

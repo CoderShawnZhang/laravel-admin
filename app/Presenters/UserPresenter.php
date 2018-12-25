@@ -51,8 +51,7 @@ class UserPresenter extends BasePresenters
     {
         $skin = config('admin.adminSkin');
         return [
-            '<a href="'.route('admin.menu.create').'"><button type="button" class="btn btn-block btn-lg btn-flat bg-'.config('adminSkin.'.$skin.'.tools_btn_new').'">新增用户</button></a>',
-            '<a href="'.route('admin.menu.clearCache').'"><button type="button" class="btn btn-block btn-lg btn-flat bg-'.config('adminSkin.'.$skin.'.tools_clear_cache').'">清理缓存</button></a>'
+            '<a href="'.route('admin.user.create').'"><button type="button" class="btn btn-block btn-lg btn-flat bg-'.config('adminSkin.'.$skin.'.tools_btn_new').'">新增用户</button></a>',
         ];
     }
 

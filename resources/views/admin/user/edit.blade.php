@@ -9,7 +9,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-            <form action="{{ url('admin/user/store') }}" method="post">
+            <form action="{{ url('admin/user/update',['user_id'=>$user['id']]) }}" method="post">
             {{ csrf_field() }}
             <!-- text input -->
                 <div class="form-group">
@@ -19,14 +19,6 @@
                 <div class="form-group">
                     <label>账号</label>
                     <input type="text" name="email" class="form-control" value="{{$user['email']}}" placeholder="路由">
-                </div>
-                <div class="form-group">
-                    <label>密码</label>
-                    <input type="password" name="password" class="form-control" placeholder="密码">
-                </div>
-                <div class="form-group">
-                    <label>确认密码</label>
-                    <input type="password" class="form-control" name="password_confirmation" placeholder="确认密码">
                 </div>
                 <div class="form-group">
                     <label>角色</label>
@@ -39,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label>状态</label>
-                    <select id="selData" class="form-control select2" name="parent_id" style="width: 100%;">
+                    <select id="selData" class="form-control select2" name="state" style="width: 100%;">
                         <option selected="selected" value="1">启用</option>
                         <option value="0">禁用</option>
                         <option value="-1">锁定</option>
@@ -48,8 +40,7 @@
                 </div>
                 <div class="form-group">
                     <div style="width: 70px;">
-                        <button type="submit" class="{{$detailCompose['add']['class']}}">新 增</button>
-                        <button type="submit" class="{{$detailCompose['add']['class']}}">完善用户信息</button>
+                        <button type="submit" class="{{$detailCompose['add']['class']}}">更&nbsp;&nbsp;新</button>
                     </div>
                 </div>
             </form>
