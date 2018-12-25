@@ -17,10 +17,10 @@ class PermissionController extends Controller
         //所有权限列表
         $permissionList = PermissionRepository::listPage([],10);
         //分页处理
-        $page = isset($page)?$request['page']:1;
-        $permissionList = $permissionList->appends(array(
+        $page = isset($request['page'])?$request['page']:1;
+        $permissionList = $permissionList->appends([
              'page'=>$page
-         ));
+         ]);
 
         return view('admin.permission.list',compact('permissionList'));
     }

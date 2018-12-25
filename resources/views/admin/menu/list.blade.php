@@ -6,13 +6,13 @@
     @include('admin.components.table.tableTop',['buts'=> $toolsCompose])
     <div class="row">
         <div class="col-xs-12">
-            <div class="box box box-primary">
-                @include('admin.components.table.tableHeader',['search'=>$searchCompose])
+            <div class="box box box-primary" style="margin-bottom: 0;">
+                {{--@include('admin.components.table.tableHeader',['search'=>$searchCompose])--}}
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                         @include('admin.components.table.tableHead',['table' => $tableCompose])
-                        @foreach($list as $key => $val)
+                        @foreach($menuList as $key => $val)
                             <tr>
                                 <td>{{ $val['id'] }}</td>
                                 <td>{{ $val['name'] }}</td>
@@ -34,9 +34,8 @@
                         @endforeach
                     </table>
                 </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
+            <div style="right: 10px;position: absolute;" >{!! $menuList->links() !!}</div>
         </div>
     </div>
 @endsection

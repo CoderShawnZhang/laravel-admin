@@ -23,11 +23,15 @@ class MenuRepository extends BaseRepository
     {
         $menus = Cache::get(CacheConstant::ALL_MENUS_CACHE);
         if(empty($menus)){
-//            $menus = $this->model->orderBy('sort','asc')->get();
             $menus = $this->findAll([],'sort');
             Cache::forever(CacheConstant::ALL_MENUS_CACHE,$menus);
         }
         return $menus;
+    }
+
+    public function listPage($condition = [],$page = 10)
+    {
+        return $this->page($condition,$page);
     }
 
     /**

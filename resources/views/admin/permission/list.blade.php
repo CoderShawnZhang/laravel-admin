@@ -33,14 +33,10 @@
                             </tr>
                         @endforeach
                     </table>
-
                 </div>
                 <!-- /.box-body -->
             </div>
             <div style="right: 10px;position: absolute;" >{!! $permissionList->links() !!}</div>
-
-            <!-- /.box -->
-
         </div>
     </div>
 @endsection

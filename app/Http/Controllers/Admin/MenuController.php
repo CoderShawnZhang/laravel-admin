@@ -11,10 +11,12 @@ use App\Http\Controllers\Controller;
 
 class MenuController extends Controller
 {
-    public function list(Application $app)
+    public function list(Request $request)
     {
-        $list = MenuRepository::getAllMenu();
-        return view('admin.menu.list',compact('list'));
+        $menuList = MenuRepository::listPage([],10);
+        $page = isset($request['page'])?$request['page']:1;
+        $menuList = $menuList->appends(['page'=>$page]);
+        return view('admin.menu.list',compact('menuList'));
     }
 
     public function create()
