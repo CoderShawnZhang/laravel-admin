@@ -19,6 +19,9 @@ class MenuController extends Controller
         return view('admin.menu.list',compact('menuList'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         $menus = MenuRepository::getAllMenu();
